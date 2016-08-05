@@ -1,0 +1,23 @@
+.deleteIcon {
+    font-size: 1.5em;
+    color: red;
+    align:right;
+    cursor: pointer;
+}
+
+.deleteIcon:hover {
+    text-decoration: none;
+    color: #E90000;
+}
+
+.floatRight {
+    float: right
+}
+
+.tableText {
+    padding-left: 15px !important;
+}
+
+.radioButtonsDistance {
+    margin-left: 5px;
+}

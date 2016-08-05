@@ -1,0 +1,55 @@
+<div ng-controller="startpageController as c" style="padding-right:50px; padding-left:50px;">
+    <h3>Einkaufsliste</h3>
+    <div class="panel panel-default">
+        <table class="table panel-heading">
+            <thead>
+                <tr>
+                    <th class="col-md-3">Name</th>
+                    <th class="col-md-3">Anzahl</th>
+                    <th class="col-md-3">Einheit</th>
+                    <th class="col-md-3">Einkaufsladen</th>
+                </tr>
+            </thead>
+        </table>
+        <table class="table footable">
+            <tbody>
+                <tr class="tableText" ng-repeat="produkt in c.produkte | orderBy: 'laden'">
+                    <td class="col-md-3 tableText">{{produkt.name}}</td>
+                    <td class="col-md-3 tableText">{{produkt.anzahl}}</td>
+                    <td class="col-md-3 tableText">{{produkt.einheit}}</td>
+                    <td class="col-md-3 tableText">{{produkt.laden}}<span class="floatRight"><a class="fa fa-times deleteIcon" ng-click="c.deleteItem($index)"></a></span></td>
+                </tr>
+                <tr>
+                    <td class="col-md-3"><input type="text" class="form-control" ng-model="c.name" placeholder="Name des Produktes"></td>
+                    <td class="col-md-3"><input type="text" class="form-control" ng-model="c.anzahl" placeholder="Name der Produkte"></td>
+                    <td class="col-md-3"style="vertical-align: middle">
+                        <input type="radio" name="Einheit" value ="Stück" ng-model="c.einheit"> St&uuml;ck
+                        <input type="radio" name="Einheit" value="Gramm" ng-model="c.einheit" class="radioButtonsDistance"> Gramm
+                    </td>
+                    <td class="col-md-3"><input type="text" class="form-control" ng-model="c.laden" placeholder="Einkaufsladen"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <div class="col-md-6">
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    {{c.aktuellesRezept.name}}
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" >
+                    <li ng-repeat="rezept in c.rezepte"><a ng-click="c.changeRezept(rezept)">{{rezept.name}}</a></li>
+                </ul>
+                <button type="button" class="btn btn-primary" ng-click="c.addRezept()">Rezept hinzufügen</button>
+            </div>
+        </div>
+        <div class=" col-md-6">
+            <div class="btn-group floatRight" role="group" aria-label="...">
+                <button type="button" class="btn btn-primary" ng-click="c.addProduct()">Produkt hinzufügen</button>
+                <button type="button" class="btn btn-danger" ng-click="c.deleteList()">Einkaufsliste leeren</button>
+            </div>
+        </div>
+
+    </div>
+</div>

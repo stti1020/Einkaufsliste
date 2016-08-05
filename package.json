@@ -1,0 +1,11 @@
+{
+  "name": "test",
+  "version": "2.4.0",
+  "private": true,
+  "devDependencies": {
+   "grunt": "^0.4.1",
+    "grunt-cli": "^1.2.0",
+	"grunt-http-server": "^2.0.0",
+    "rimraf": "2.2.8"
+  }
+}
