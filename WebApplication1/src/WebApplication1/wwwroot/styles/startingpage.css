@@ -21,3 +21,15 @@
 .radioButtonsDistance {
     margin-left: 5px;
 }
+
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 800px) {
+    tr, form, .sizeButton {
+        font-size: 1.5em;
+    }
+
+    th {
+        font-size: 0.9em;
+    }
+}

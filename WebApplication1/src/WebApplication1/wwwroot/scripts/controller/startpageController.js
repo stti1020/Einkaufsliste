@@ -32,8 +32,8 @@
                    ]
             }
         ];
-        console.log(vm.recipes);
 
+        vm.addProductForm = false;
         vm.currentRecipe = vm.recipes[0];
 
         vm.addProduct = addProduct;
@@ -47,7 +47,8 @@
             vm.products.push(productToAdd);
             startpageService.addProduct(productToAdd);
             vm.name = vm.quantity = vm.supermarket = vm.unit = "";
-            
+            vm.addProductForm = false;
+
         }
 
         function deleteList() {
